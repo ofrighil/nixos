@@ -17,7 +17,7 @@
 	  ./hosts/serval
 	  home-manager.nixosModules.home-manager
 	  ./modules/core/home-manager.nix
-	  ./users/ofrighil.nix
+	  ./home/ofrighil.nix
 	];
       };
     };
