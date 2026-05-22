@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... }:
 let
-  cfg = config.modules.editors.neovim;
+  cfg = config.home-modules.editors.neovim;
 in {
-  options.modules.editors.neovim.enable = lib.mkEnableOption "Neovim";
+  options.home-modules.editors.neovim.enable = lib.mkEnableOption "Neovim";
 
   config = lib.mkIf cfg.enable {
     programs.neovim = {
@@ -10,6 +10,7 @@ in {
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
+      sideloadInitLua = true;
     };
   };
 } 

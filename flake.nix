@@ -16,7 +16,13 @@
 	modules = [
 	  ./hosts/serval
 	  home-manager.nixosModules.home-manager
-	  ./modules/core/home-manager.nix
+	  ./home-modules
+	  # {
+	  #   home-manager = {
+	  #     useGlobalPkgs = true;
+	  #     useUserPackages = true;
+	  #   };
+	  # }
 	  ./home/ofrighil.nix
 	];
       };
