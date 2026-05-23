@@ -8,17 +8,24 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations = {
-      serval = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-	specialArgs = { inherit inputs; };
-	modules = [
-	  ./hosts/serval
-	  home-manager.nixosModules.home-manager
-	  ./home/ofrighil.nix
-	];
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations = {
+        serval = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/serval
+            home-manager.nixosModules.home-manager
+            ./home/ofrighil.nix
+          ];
+        };
       };
     };
-  };
 }
