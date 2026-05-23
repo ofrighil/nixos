@@ -1,11 +1,8 @@
-{ pkgs, ... }: {
+{
   users.users.ofrighil = {
     isNormalUser = true;
     description = "Eugene";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    ];
   };
 
   home-manager = {
@@ -13,7 +10,7 @@
     useUserPackages = true;
   };
 
-  home-manager.users.ofrighil = { config, ... }: 
+  home-manager.users.ofrighil = { config, pkgs, ... }: 
   {
     programs.home-manager.enable = true;
     home.stateVersion = "26.05";
@@ -26,8 +23,14 @@
     home-modules.languages.nix.enable = true;
     home-modules.languages.python.enable = true;
 
+    programs.firefox.enable = true;
+
+    home.packages = with pkgs; [
+      git
+      jujutsu
+    ];
+
     # xdg.configFile."nvim".source = ./dotfiles/nvim;
-    # xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/home/dotfiles/nvim";
     xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/home-modules/editors/neovim/nvim";
   };
 }
