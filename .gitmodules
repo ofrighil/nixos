@@ -1,3 +1,4 @@
-[submodule "home/dotfiles/nvim"]
+[submodule "nvim"]
 	path = home-modules/editors/neovim/nvim
 	url = https://github.com/ofrighil/nvim
+	branch = main
