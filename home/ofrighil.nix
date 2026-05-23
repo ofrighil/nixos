@@ -5,10 +5,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-  };
+  imports = [ ../home-modules/common.nix ];
 
   home-manager.users.ofrighil = { config, pkgs, ... }: 
   {

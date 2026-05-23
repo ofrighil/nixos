@@ -22,7 +22,6 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/serval
-            home-manager.nixosModules.home-manager
             ./home/ofrighil.nix
           ];
         };
