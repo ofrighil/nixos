@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
-    ./editors
-    ./languages
+    ./nix.nix
+    ./python.nix
   ];
 }
