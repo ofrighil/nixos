@@ -20,6 +20,8 @@
     ];
     
     home-modules.editors.neovim.enable = true;
+
+    home-modules.languages.haskell.enable = true;
     home-modules.languages.nix.enable = true;
     home-modules.languages.python.enable = true;
 
