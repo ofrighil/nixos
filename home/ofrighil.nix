@@ -22,6 +22,7 @@
     home-modules.languages.agda.enable = true;
     home-modules.languages.haskell.enable = true;
     home-modules.languages.nix.enable = true;
+    home-modules.languages.ocaml.enable = true;
     home-modules.languages.python.enable = true;
     home-modules.languages.rust.enable = true;
 
