@@ -6,6 +6,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -21,6 +26,9 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
+            {
+              nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
+            }
             ./hosts/serval
             ./home/ofrighil.nix
           ];

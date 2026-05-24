@@ -21,6 +21,7 @@
     home-modules.languages.haskell.enable = true;
     home-modules.languages.nix.enable = true;
     home-modules.languages.python.enable = true;
+    home-modules.languages.rust.enable = true;
 
     programs.firefox.enable = true;
 
