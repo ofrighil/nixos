@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   imports = [ ./kde.nix ];
-  options.modules.desktop = lib.mkOption {
+  options.modules.desktops = lib.mkOption {
     type = lib.types.enum [ "kde" ];
     default = "kde";
   };

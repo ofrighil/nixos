@@ -6,9 +6,8 @@
   ];
 
   imports = [
-    # Include the results of the hardware scan.
     ./hardware.nix
-    ../../modules/desktop
+    ../../modules/desktops
   ];
 
   # Bootloader.
@@ -46,7 +45,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  modules.desktop = "kde";
+  modules.desktops = "kde";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
