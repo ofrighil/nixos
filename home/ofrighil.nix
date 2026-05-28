@@ -36,6 +36,7 @@
       home.packages = with pkgs; [
         git
         jujutsu
+        ripgrep
         inputs.assets.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
 
