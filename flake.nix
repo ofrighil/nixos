@@ -11,6 +11,8 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    assets.url = "git+ssh://git@github.com/ofrighil/assets.git?ref=main";
   };
 
   outputs =
