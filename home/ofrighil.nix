@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   users.users.ofrighil = {
     isNormalUser = true;
@@ -7,7 +7,11 @@
       "networkmanager"
       "wheel"
     ];
+    shell = pkgs.zsh;
   };
+
+  programs.zsh.enable = true;
+  programs.starship.enable = true;
 
   imports = [ ../home-modules/common.nix ];
 
@@ -43,10 +47,11 @@
 
       fonts.fontconfig.enable = true;
 
-      programs.zsh.enable = true;
-
       home.file."emacs".source =
         config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/emacs";
+
+      xdg.configFile."ghostty".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/ghostty";
 
       # xdg.configFile."nvim".source = ./dotfiles/nvim;
       xdg.configFile."nvim".source =
