@@ -35,6 +35,7 @@
 
       home.packages = with pkgs; [
         git
+        fzf
         jujutsu
         ripgrep
         inputs.assets.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -44,11 +45,11 @@
 
       programs.zsh.enable = true;
 
-      home.file.".emacs.d/init.el".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/home-modules/editors/emacs/init.el";
+      home.file."emacs".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/emacs";
 
       # xdg.configFile."nvim".source = ./dotfiles/nvim;
       xdg.configFile."nvim".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/home-modules/editors/neovim/nvim";
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/nvim";
     };
 }

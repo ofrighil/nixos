@@ -16,6 +16,7 @@ in {
       vimAlias = true;
       sideloadInitLua = true;
       plugins = with pkgs.vimPlugins; [
+        telescope-fzf-native-nvim
         (nvim-treesitter.withPlugins (p: [
           p.haskell
           p.nix
