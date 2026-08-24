@@ -46,6 +46,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # modules.desktops = "hyprland";
   modules.desktops = "kde";
   modules.terminals.ghostty.enable = true;
 

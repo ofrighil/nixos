@@ -1,8 +1,14 @@
 { lib, ... }:
 {
-  imports = [ ./kde.nix ];
+  imports = [
+    ./hyprland.nix
+    ./kde.nix
+  ];
   options.modules.desktops = lib.mkOption {
-    type = lib.types.enum [ "kde" ];
+    type = lib.types.enum [
+      "hyprland"
+      "kde"
+    ];
     default = "kde";
   };
 
