@@ -6,7 +6,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      python315
+      python3
       ruff
       ty
     ];

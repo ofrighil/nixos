@@ -17,6 +17,9 @@
 
   home-manager.users.ofrighil =
     { config, pkgs, ... }:
+    let
+      dotfile = dir: config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/${dir}";
+    in
     {
       programs.home-manager.enable = true;
       home.stateVersion = "26.05";
@@ -47,17 +50,10 @@
 
       fonts.fontconfig.enable = true;
 
-      home.file."emacs".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/emacs";
-
-      xdg.configFile."ghostty".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/ghostty";
-
-      xdg.configFile."hypr".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/hypr";
-
+      xdg.configFile."emacs".source = dotfile "emacs";
+      xdg.configFile."ghostty".source = dotfile "ghostty";
+      xdg.configFile."hypr".source = dotfile "hypr";
       # xdg.configFile."nvim".source = ./dotfiles/nvim;
-      xdg.configFile."nvim".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/nvim";
+      xdg.configFile."nvim".source = dotfile "nvim";
     };
 }

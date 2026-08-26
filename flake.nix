@@ -12,7 +12,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    assets.url = "git+ssh://git@github.com/ofrighil/assets.git?ref=main";
+    assets = {
+      url = "git+ssh://git@github.com/ofrighil/assets.git?ref=main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
