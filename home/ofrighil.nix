@@ -13,8 +13,6 @@
   programs.zsh.enable = true;
   programs.starship.enable = true;
 
-  imports = [ ../home-modules/common.nix ];
-
   home-manager.users.ofrighil =
     { config, pkgs, ... }:
     let
@@ -23,6 +21,8 @@
     {
       programs.home-manager.enable = true;
       home.stateVersion = "26.05";
+
+      programs.ghostty.enable = true;
 
       imports = [
         ../home-modules

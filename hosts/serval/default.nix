@@ -8,7 +8,6 @@
   imports = [
     ./hardware.nix
     ../../modules/desktops
-    ../../modules/terminals
   ];
 
   # Bootloader.
@@ -48,7 +47,6 @@
 
   # modules.desktops = "hyprland";
   modules.desktops = "kde";
-  modules.terminals.ghostty.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

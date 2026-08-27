@@ -19,20 +19,19 @@
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
+    { nixpkgs, ... }@inputs:
     {
       nixosConfigurations = {
         serval = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
+            { nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ]; }
+            inputs.home-manager.nixosModules.home-manager
             {
-              nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = { inherit inputs; };
             }
             ./hosts/serval
             ./home/ofrighil.nix
