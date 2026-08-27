@@ -1,7 +1,13 @@
-{ config, lib, pkgs, ... }: 
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.home-modules.languages.python;
-in {
+in
+{
   options.home-modules.languages.python.enable = lib.mkEnableOption "Python";
 
   config = lib.mkIf cfg.enable {

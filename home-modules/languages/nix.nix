@@ -1,7 +1,13 @@
-{ config, lib, pkgs, ... }: 
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.home-modules.languages.nix;
-in {
+in
+{
   options.home-modules.languages.nix.enable = lib.mkEnableOption "Nix";
 
   config = lib.mkIf cfg.enable {

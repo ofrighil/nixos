@@ -1,7 +1,13 @@
-{ config, lib, pkgs, ... }: 
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.home-modules.languages.haskell;
-in {
+in
+{
   options.home-modules.languages.haskell.enable = lib.mkEnableOption "Haskell";
 
   config = lib.mkIf cfg.enable {

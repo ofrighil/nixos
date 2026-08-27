@@ -1,5 +1,4 @@
-{ inputs, pkgs, ... }:
-{
+{ inputs, pkgs, ... }: {
   users.users.ofrighil = {
     isNormalUser = true;
     description = "Eugene";
@@ -16,7 +15,8 @@
   home-manager.users.ofrighil =
     { config, pkgs, ... }:
     let
-      dotfile = dir: config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/${dir}";
+      dotfile =
+        dir: config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/${dir}";
     in
     {
       programs.home-manager.enable = true;
@@ -24,9 +24,7 @@
 
       programs.ghostty.enable = true;
 
-      imports = [
-        ../home-modules
-      ];
+      imports = [ ../home-modules ];
 
       home-modules.editors.emacs.enable = true;
       home-modules.editors.neovim.enable = true;
