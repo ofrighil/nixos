@@ -31,7 +31,7 @@
 
   console = {
     earlySetup = true;
-    font = "${pkgs.cozette}/share/consolefonts/cozette12x26psfu";
+    font = "${pkgs.cozette}/share/consolefonts/cozette12x26.psfu";
     keyMap = "us";
   };
 
