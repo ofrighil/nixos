@@ -16,18 +16,6 @@ in
     programs.neovim = {
       enable = true;
       defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-      sideloadInitLua = true;
-      plugins = with pkgs.vimPlugins; [
-        telescope-fzf-native-nvim
-        (nvim-treesitter.withPlugins (p: [
-          p.haskell
-          p.nix
-          p.python
-          p.rust
-        ]))
-      ];
     };
   };
 }

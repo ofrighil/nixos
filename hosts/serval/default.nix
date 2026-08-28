@@ -35,6 +35,8 @@
     keyMap = "us";
   };
 
+  environment.systemPackages = with pkgs; [ git gcc gnumake ];
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
