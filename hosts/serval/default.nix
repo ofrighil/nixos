@@ -29,6 +29,12 @@
   # Set your time zone.
   time.timeZone = "America/New_York";
 
+  console = {
+    earlySetup = true;
+    font = "${pkgs.cozette}/share/consolefonts/cozette12x26psfu";
+    keyMap = "us";
+  };
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 

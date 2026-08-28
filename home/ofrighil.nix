@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ inputs, ... }: {
   users.users.ofrighil = {
     isNormalUser = true;
     description = "Eugene";
@@ -6,11 +6,7 @@
       "networkmanager"
       "wheel"
     ];
-    shell = pkgs.zsh;
   };
-
-  programs.zsh.enable = true;
-  programs.starship.enable = true;
 
   home-manager.users.ofrighil =
     { config, pkgs, ... }:
@@ -35,6 +31,9 @@
       home-modules.languages.ocaml.enable = true;
       home-modules.languages.python.enable = true;
       home-modules.languages.rust.enable = true;
+
+      programs.bash.enable = true;
+      programs.starship.enable = true;
 
       programs.firefox.enable = true;
 
