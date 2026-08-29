@@ -27,10 +27,12 @@
 
       home-modules.languages.agda.enable = true;
       home-modules.languages.haskell.enable = true;
+      home-modules.languages.lua.enable = true;
       home-modules.languages.nix.enable = true;
       home-modules.languages.ocaml.enable = true;
       home-modules.languages.python.enable = true;
       home-modules.languages.rust.enable = true;
+      home-modules.languages.typescript.enable = true;
 
       programs.bash.enable = true;
       programs.starship.enable = true;
@@ -39,10 +41,12 @@
 
       home.packages = with pkgs; [
         git
+        fd
         fzf
         jujutsu
         ripgrep
         inputs.assets.packages.${pkgs.stdenv.hostPlatform.system}.default
+        wl-clipboard
       ];
 
       fonts.fontconfig.enable = true;
