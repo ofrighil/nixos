@@ -8,7 +8,7 @@ let
   cfg = config.home-modules.languages.lua;
 in
 {
-  options.home-modules.languages.lua.enable = lib.mkEnableOption "Haskell";
+  options.home-modules.languages.lua.enable = lib.mkEnableOption "Lua";
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
