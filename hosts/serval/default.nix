@@ -6,7 +6,7 @@
 
   imports = [
     ./hardware.nix
-    ../../modules/desktops
+    ../../modules/graphical
   ];
 
   # Bootloader.
@@ -52,8 +52,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # modules.desktops = "hyprland";
-  modules.desktops = "kde";
+  modules.graphical = "hyprland";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

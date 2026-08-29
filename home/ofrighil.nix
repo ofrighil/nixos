@@ -9,7 +9,7 @@
   };
 
   home-manager.users.ofrighil =
-    { config, pkgs, ... }:
+    { config, osConfig, lib, pkgs, ... }:
     let
       dotfile =
         dir: config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/${dir}";
@@ -53,8 +53,10 @@
 
       xdg.configFile."emacs".source = dotfile "emacs";
       xdg.configFile."ghostty".source = dotfile "ghostty";
-      xdg.configFile."hypr".source = dotfile "hypr";
-      # xdg.configFile."nvim".source = ./dotfiles/nvim;
       xdg.configFile."nvim".source = dotfile "nvim";
+
+      xdg.configFile."hypr" = lib.mkIf (osConfig.modules.graphical == "hyprland") {
+        source = dotfile "hypr";
+      };
     };
 }
