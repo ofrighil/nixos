@@ -47,6 +47,7 @@
         ripgrep
         inputs.assets.packages.${pkgs.stdenv.hostPlatform.system}.default
         wl-clipboard
+        quickshell
       ];
 
       fonts.fontconfig.enable = true;
@@ -57,6 +58,9 @@
 
       xdg.configFile."hypr" = lib.mkIf (osConfig.modules.graphical == "hyprland") {
         source = dotfile "hypr";
+      };
+      xdg.configFile."quickshell" = lib.mkIf (osConfig.modules.graphical == "hyprland") {
+        source = dotfile "quickshell";
       };
     };
 }
