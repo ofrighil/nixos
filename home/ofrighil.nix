@@ -9,10 +9,17 @@
   };
 
   home-manager.users.ofrighil =
-    { config, osConfig, lib, pkgs, ... }:
+    {
+      config,
+      osConfig,
+      lib,
+      pkgs,
+      ...
+    }:
     let
       dotfile =
         dir: config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/${dir}";
+      hyprland = osConfig.modules.graphical == "hyprland";
     in
     {
       programs.home-manager.enable = true;
@@ -39,16 +46,20 @@
 
       programs.firefox.enable = true;
 
-      home.packages = with pkgs; [
-        git
-        fd
-        fzf
-        jujutsu
-        ripgrep
-        inputs.assets.packages.${pkgs.stdenv.hostPlatform.system}.default
-        wl-clipboard
-        quickshell
-      ];
+      home.packages =
+        (with pkgs; [
+          git
+          fd
+          fzf
+          jujutsu
+          ripgrep
+          inputs.assets.packages.${pkgs.stdenv.hostPlatform.system}.default
+          wl-clipboard
+        ])
+        ++ lib.optionals hyprland [
+          pkgs.quickshell
+          pkgs.qt6.qtdeclarative
+        ];
 
       fonts.fontconfig.enable = true;
 
@@ -56,10 +67,10 @@
       xdg.configFile."ghostty".source = dotfile "ghostty";
       xdg.configFile."nvim".source = dotfile "nvim";
 
-      xdg.configFile."hypr" = lib.mkIf (osConfig.modules.graphical == "hyprland") {
+      xdg.configFile."hypr" = lib.mkIf hyprland {
         source = dotfile "hypr";
       };
-      xdg.configFile."quickshell" = lib.mkIf (osConfig.modules.graphical == "hyprland") {
+      xdg.configFile."quickshell" = lib.mkIf hyprland {
         source = dotfile "quickshell";
       };
     };
