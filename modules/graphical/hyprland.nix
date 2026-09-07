@@ -26,7 +26,7 @@
         };
 
         systemd.user.services.hyprpolkitagent = {
-          description = "Hprland polkit authentication agent";
+          description = "Hyprland polkit authentication agent";
           wantedBy = [ "graphical-session.target" ];
           after = [ "graphical-session.target" ];
           partOf = [ "graphical-session.target" ];
