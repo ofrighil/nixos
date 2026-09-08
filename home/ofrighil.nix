@@ -29,6 +29,8 @@
 
       imports = [ ../home-modules ];
 
+      home-modules.xdg.tidyUserDirs = osConfig.modules.graphical == "hyprland";
+
       home-modules.editors.emacs.enable = true;
       home-modules.editors.neovim.enable = true;
 
