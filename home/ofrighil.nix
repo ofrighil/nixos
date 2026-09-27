@@ -43,25 +43,23 @@
       home-modules.languages.rust.enable = true;
       home-modules.languages.typescript.enable = true;
 
+      home-modules.quickshell.enable = hyprland;
+
       programs.bash.enable = true;
       programs.starship.enable = true;
 
       programs.firefox.enable = true;
 
-      home.packages =
-        (with pkgs; [
-          git
-          fd
-          fzf
-          jujutsu
-          ripgrep
-          inputs.assets.packages.${pkgs.stdenv.hostPlatform.system}.default
-          wl-clipboard
-        ])
-        ++ lib.optionals hyprland [
-          pkgs.quickshell
-          pkgs.qt6.qtdeclarative
-        ];
+      home.packages = with pkgs; [
+        claude-code
+        git
+        fd
+        fzf
+        jujutsu
+        ripgrep
+        inputs.assets.packages.${pkgs.stdenv.hostPlatform.system}.default
+        wl-clipboard
+      ];
 
       fonts.fontconfig.enable = true;
 
@@ -71,9 +69,6 @@
 
       xdg.configFile."hypr" = lib.mkIf hyprland {
         source = dotfile "hypr";
-      };
-      xdg.configFile."quickshell" = lib.mkIf hyprland {
-        source = dotfile "quickshell";
       };
     };
 }
