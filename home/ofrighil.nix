@@ -17,8 +17,7 @@
       ...
     }:
     let
-      dotfile =
-        dir: config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/${dir}";
+      dotfile = config.lib.dotfiles.mkSymlink;
       hyprland = osConfig.modules.graphical == "hyprland";
     in
     {

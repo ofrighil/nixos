@@ -17,7 +17,6 @@ in
 
     home-modules.languages.qml.enable = true;
 
-    xdg.configFile."quickshell".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/quickshell";
+    xdg.configFile."quickshell".source = config.lib.dotfiles.mkSymlink "quickshell";
   };
 }
