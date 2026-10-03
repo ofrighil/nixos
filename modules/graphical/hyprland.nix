@@ -5,7 +5,6 @@
       {
         programs.hyprland.enable = true;
 
-        programs.hyprlock.enable = true;
         # services.hypridle.enable = true;
 
         xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
