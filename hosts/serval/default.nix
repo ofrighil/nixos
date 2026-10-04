@@ -16,6 +16,21 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Boot splash screen.
+  boot.plymouth.enable = true;
+  boot.initrd.systemd.enable = true;
+  boot.initrd.kernelModules = [ "i915" ];
+
+  # Silent boot so the splash isn't interrupted by kernel/systemd messages.
+  boot.consoleLogLevel = 3;
+  boot.initrd.verbose = false;
+  boot.kernelParams = [
+    "quiet"
+    "splash"
+    "udev.log_level=3"
+    "systemd.show_status=auto"
+  ];
+
   networking.hostName = "serval"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
