@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791129401,
-        "narHash": "sha256-CAVSdRehmzpJ3nZxsRhsAnQAzWJFci/NWN0oOhUNiEM=",
+        "lastModified": 1791130120,
+        "narHash": "sha256-bLHZMAdyWC/bnDJoqkTkY0p6Ze1SE7jLeL3puSO6xdc=",
         "ref": "main",
-        "rev": "b183886e05275ed982355600beb901dc50693fd7",
-        "revCount": 7,
+        "rev": "2aeafb66f3dca5e01e50e26921e26058ac2d8bed",
+        "revCount": 8,
         "type": "git",
         "url": "ssh://git@github.com/ofrighil/assets.git"
       },
