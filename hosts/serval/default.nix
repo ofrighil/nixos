@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -18,6 +18,10 @@
 
   # Boot splash screen.
   boot.plymouth.enable = true;
+  boot.plymouth.theme = "plymouth-theme-01";
+  boot.plymouth.themePackages = [
+    inputs.assets.packages.${pkgs.stdenv.hostPlatform.system}.plymouth-theme-01
+  ];
   boot.initrd.systemd.enable = true;
   boot.initrd.kernelModules = [ "i915" ];
 
@@ -46,7 +50,7 @@
 
   console = {
     earlySetup = true;
-    font = "${pkgs.cozette}/share/consolefonts/cozette12x26.psfu";
+    font = "${pkgs.uw-ttyp0}/share/consolefonts/CEur_L-Ttyp0Regular30x14.psf.gz";
     keyMap = "us";
   };
 
