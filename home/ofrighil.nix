@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ ... }: {
   users.users.ofrighil = {
     isNormalUser = true;
     description = "Eugene";
@@ -58,7 +58,6 @@
         fzf
         jujutsu
         ripgrep
-        inputs.assets.packages.${pkgs.stdenv.hostPlatform.system}.default
         wl-clipboard
       ];
 

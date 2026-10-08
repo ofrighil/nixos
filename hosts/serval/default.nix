@@ -23,6 +23,9 @@
     inputs.assets.packages.${pkgs.stdenv.hostPlatform.system}.plymouth-theme-01
   ];
   boot.initrd.systemd.enable = true;
+
+  fonts.packages = [ inputs.assets.packages.${pkgs.stdenv.hostPlatform.system}.default ];
+
   boot.initrd.kernelModules = [ "i915" ];
 
   # Silent boot so the splash isn't interrupted by kernel/systemd messages.

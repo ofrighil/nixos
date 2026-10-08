@@ -37,7 +37,7 @@
           };
         };
       }
-      (import ./lib/tuigreet.nix { inherit lib pkgs; } { cmd = "start-hyprland"; })
+      (import ./lib/qsgreet.nix { inherit lib pkgs; } { cmd = "start-hyprland"; })
     ]
   );
 }
