@@ -7,6 +7,7 @@
   imports = [
     ./hardware.nix
     ../../modules/graphical
+    inputs.kalpa.nixosModules.default
   ];
 
   # Bootloader.
@@ -50,6 +51,12 @@
 
   # Set your time zone.
   time.timeZone = "America/New_York";
+
+  kalpa = {
+    enable = true;
+    latitude = 40.71;
+    longitude = -74.01;
+  };
 
   console = {
     earlySetup = true;

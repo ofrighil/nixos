@@ -21,6 +21,11 @@
       url = "git+ssh://git@github.com/ofrighil/assets.git?ref=main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    kalpa = {
+      url = "git+ssh://git@github.com/ofrighil/kalpa.git?ref=main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

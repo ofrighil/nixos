@@ -41,6 +41,27 @@
         "type": "github"
       }
     },
+    "kalpa": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792260003,
+        "narHash": "sha256-52fc0Su/ce38ZpV0By+yX/IgS0744vWZxCyVxtX7ACQ=",
+        "ref": "main",
+        "rev": "7a755ca177e4cc6a5d7ea2c8db2cabc6896239c5",
+        "revCount": 5,
+        "type": "git",
+        "url": "ssh://git@github.com/ofrighil/kalpa.git"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "ssh://git@github.com/ofrighil/kalpa.git"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1791048980,
@@ -81,6 +102,7 @@
       "inputs": {
         "assets": "assets",
         "home-manager": "home-manager",
+        "kalpa": "kalpa",
         "nixpkgs": "nixpkgs",
         "quickshell": "quickshell",
         "rust-overlay": "rust-overlay"
