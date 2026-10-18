@@ -16,7 +16,5 @@ in
     home.packages = [ pkgs.quickshell ];
 
     home-modules.languages.qml.enable = true;
-
-    xdg.configFile."quickshell".source = config.lib.dotfiles.mkSymlink "quickshell";
   };
 }
