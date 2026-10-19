@@ -48,11 +48,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792358447,
-        "narHash": "sha256-Wp4joPEKqJ2EEMsjNZUHlVoKOKKFRDUPY2+KBsN6mtY=",
+        "lastModified": 1792377012,
+        "narHash": "sha256-z31+8p9HQTl1CH4hDr9HnKFXk5GX6aeJJHFIIdDYS+k=",
         "ref": "main",
-        "rev": "47c5be33d0688dc774de42eef47bb24825836e8b",
-        "revCount": 8,
+        "rev": "055a2c8cc2144a112f43867e838c9d7eedacf885",
+        "revCount": 9,
         "type": "git",
         "url": "ssh://git@github.com/ofrighil/kalpa.git"
       },
