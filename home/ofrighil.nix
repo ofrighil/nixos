@@ -8,8 +8,6 @@
     ];
   };
 
-  security.pam.services.quickshell-lock = { };
-
   home-manager.users.ofrighil =
     {
       config,

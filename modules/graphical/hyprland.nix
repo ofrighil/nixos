@@ -6,7 +6,6 @@
         programs.hyprland.enable = true;
 
         services.hypridle.enable = true;
-        systemd.user.services.hypridle.path = [ pkgs.quickshell ];
 
         xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
