@@ -56,6 +56,7 @@
     enable = true;
     latitude = 40.71;
     longitude = -74.01;
+    greeter.enable = true;
   };
 
   console = {
