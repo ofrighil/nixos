@@ -41,6 +41,7 @@
       home-modules.languages.python.enable = true;
       home-modules.languages.rust.enable = true;
       home-modules.languages.typescript.enable = true;
+      home-modules.languages.uiua.enable = true;
 
       home-modules.quickshell.enable = hyprland;
 

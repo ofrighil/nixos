@@ -8,5 +8,6 @@
     ./python.nix
     ./rust.nix
     ./typescript.nix
+    ./uiua.nix
   ];
 }
