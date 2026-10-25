@@ -34,6 +34,7 @@
       home-modules.editors.neovim.enable = true;
 
       home-modules.languages.agda.enable = true;
+      home-modules.languages.dafny.enable = true;
       home-modules.languages.haskell.enable = true;
       home-modules.languages.lua.enable = true;
       home-modules.languages.nix.enable = true;

@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ./agda.nix
+    ./dafny.nix
     ./haskell.nix
     ./lua.nix
     ./nix.nix
