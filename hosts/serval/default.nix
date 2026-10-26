@@ -49,6 +49,13 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  services.tailscale = {
+    enable = true;
+    openFirewall = true;
+    disableUpstreamLogging = true;
+  };
+  networking.firewall.trustedInterfaces = [ "tailscale0" ];
+
   # Set your time zone.
   time.timeZone = "America/New_York";
 
