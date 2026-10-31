@@ -22,8 +22,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    kalpa = {
-      url = "git+ssh://git@github.com/ofrighil/kalpa.git?ref=main";
+    mujo = {
+      url = "git+ssh://git@github.com/ofrighil/mujo.git?ref=main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

@@ -7,7 +7,7 @@
   imports = [
     ./hardware.nix
     ../../modules/graphical
-    inputs.kalpa.nixosModules.default
+    inputs.mujo.nixosModules.default
   ];
 
   # Bootloader.
@@ -53,7 +53,7 @@
   # Set your time zone.
   time.timeZone = "America/New_York";
 
-  kalpa = {
+  mujo = {
     enable = true;
     latitude = 40.71;
     longitude = -74.01;

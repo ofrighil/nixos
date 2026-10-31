@@ -41,25 +41,25 @@
         "type": "github"
       }
     },
-    "kalpa": {
+    "mujo": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1792956166,
-        "narHash": "sha256-ewnftR0mP0XGbbaDAM+S7Ap8ZDv6XVkYZy3h+fNAyJs=",
+        "lastModified": 1793409843,
+        "narHash": "sha256-dqNpkt1V7QLBeT+SUCZuA0tMrukyXcFZKYjCCWfFNZg=",
         "ref": "main",
-        "rev": "abfe3cd68384e0e632a2d9e75b490983dfdbd3eb",
-        "revCount": 24,
+        "rev": "c83d664e5e58f0a0fd1bcd84bb44480d5a039689",
+        "revCount": 26,
         "type": "git",
-        "url": "ssh://git@github.com/ofrighil/kalpa.git"
+        "url": "ssh://git@github.com/ofrighil/mujo.git"
       },
       "original": {
         "ref": "main",
         "type": "git",
-        "url": "ssh://git@github.com/ofrighil/kalpa.git"
+        "url": "ssh://git@github.com/ofrighil/mujo.git"
       }
     },
     "nixpkgs": {
@@ -102,7 +102,7 @@
       "inputs": {
         "assets": "assets",
         "home-manager": "home-manager",
-        "kalpa": "kalpa",
+        "mujo": "mujo",
         "nixpkgs": "nixpkgs",
         "quickshell": "quickshell",
         "rust-overlay": "rust-overlay"
