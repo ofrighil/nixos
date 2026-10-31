@@ -1,6 +1,6 @@
-{ lib, pkgs }:
-{ cmd }:
+{ lib, pkgs, ... }:
 let
+  cmd = "start-hyprland";
   greeter = lib.escapeShellArgs [
     (lib.getExe pkgs.tuigreet)
     "--time"

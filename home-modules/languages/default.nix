@@ -7,6 +7,7 @@
     ./nix.nix
     ./ocaml.nix
     ./python.nix
+    ./qml.nix
     ./rust.nix
     ./typescript.nix
     ./uiua.nix

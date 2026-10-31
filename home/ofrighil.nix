@@ -21,14 +21,13 @@
       hyprland = osConfig.modules.graphical == "hyprland";
     in
     {
-      programs.home-manager.enable = true;
       home.stateVersion = "26.05";
 
       programs.ghostty.enable = true;
 
       imports = [ ../home-modules ];
 
-      home-modules.xdg.tidyUserDirs = osConfig.modules.graphical == "hyprland";
+      home-modules.xdg.tidyUserDirs = hyprland;
 
       home-modules.editors.emacs.enable = true;
       home-modules.editors.neovim.enable = true;
@@ -43,8 +42,7 @@
       home-modules.languages.rust.enable = true;
       home-modules.languages.typescript.enable = true;
       home-modules.languages.uiua.enable = true;
-
-      home-modules.quickshell.enable = hyprland;
+      home-modules.languages.qml.enable = hyprland;
 
       programs.bash.enable = true;
       programs.starship.enable = true;
@@ -53,7 +51,6 @@
 
       home.packages = with pkgs; [
         claude-code
-        git
         fd
         fzf
         jujutsu
